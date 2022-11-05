@@ -70,5 +70,5 @@ CREATE OR REPLACE VIEW V_Trips as
     from TRIP T;
 
 CREATE OR REPLACE VIEW V_AvailableTrips as
-    select T.COUNTRY, T.TRIP_DATE, T.NAME, T.NO_PLACES, get_available_places(T.TRIP_ID) available_places from TRIP T
-    where get_available_places(T.TRIP_ID) > 0;
+    select T.COUNTRY, T.TRIP_DATE, T.NAME, T.NO_PLACES, available_places from V_TRIPS T
+    where T.AVAILABLE_PLACES > 0;
